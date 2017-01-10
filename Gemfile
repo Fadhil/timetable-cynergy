@@ -59,6 +59,7 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'sendgrid-ruby'
 end
 
 ruby "2.3.0"
