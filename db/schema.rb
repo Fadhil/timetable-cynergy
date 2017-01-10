@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110043649) do
+ActiveRecord::Schema.define(version: 20170110081117) do
+
+  create_table "programme_sessions", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "active"
+    t.boolean  "completed"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name",       limit: 255

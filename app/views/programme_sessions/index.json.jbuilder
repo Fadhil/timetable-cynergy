@@ -1,0 +1,1 @@
+json.array! @programme_sessions, partial: 'programme_sessions/programme_session', as: :programme_session

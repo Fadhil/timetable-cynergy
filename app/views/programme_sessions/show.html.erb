@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @programme_session.name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @programme_session.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @programme_session.end_date %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @programme_session.active %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @programme_session.completed %>
+</p>
+
+<%= link_to 'Edit', edit_programme_session_path(@programme_session) %> |
+<%= link_to 'Back', programme_sessions_path %>

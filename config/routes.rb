@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sessions, controller: 'programme_sessions', as: :programme_sessions
   get 'pages/home'
 
   devise_for :users, controllers: { registrations: "registrations" }
