@@ -30,6 +30,9 @@ test:
   # database: db/tly_test.sqlite3
 
 # For testing production environment
-production:
-  <<: *default
-  database: cyn_timetable_main
+production: 
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
