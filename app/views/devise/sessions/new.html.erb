@@ -1,0 +1,11 @@
+<div class="loginmodal-container">
+	<h1>Login to Your Account</h1><br>
+	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		<%= f.email_field :email, autofocus: true, placeholder: "Email" %>
+		<%= f.password_field :password, autocomplete: "off", placeholder: "******" %>
+		<%= f.submit "Log in", class: "login loginmodal-submit", name: "login", value: "login" %>
+	<% end %> 
+	<div class="login-help">
+	<%= render "devise/shared/links" %>
+	</div>
+</div>
