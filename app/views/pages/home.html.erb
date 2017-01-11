@@ -20,7 +20,7 @@
               <td><%= programme_session.name %></td>
               <td><%= programme_session.start_date %></td>
               <td><%= programme_session.end_date %></td>
-              <td><%= link_to 'Show', programme_session %></td>
+              <td><%= link_to 'View and Register', register_programme_session_path(programme_session), class: "btn btn-primary"%></td>
             </tr>
           <% end %>
         </tbody>
