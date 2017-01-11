@@ -1,0 +1,45 @@
+<%= form_for(@programme_session) do |f| %>
+  <% if @programme_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@programme_session.errors.count, "error") %> prohibited this programme_session from being saved:</h2>
+
+      <ul>
+      <% @programme_session.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.text_field :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.text_field :end_date %>
+  </div>
+  <% if params[:action] != "new" %>
+    <div class="field">
+      <%= f.label :active %><br>
+      <%= f.check_box :active %>
+    </div>
+    <div class="field">
+      <%= f.label :completed %><br>
+      <%= f.check_box :completed %>
+    </div>
+  <% end %>
+  <br>
+  <div class="actions">
+    <%= f.submit "Submit", class: 'btn btn-large btn-primary' %>
+  </div>
+
+  <script>
+    $("#programme_session_start_date").datepicker({ format: 'dd/mm/yyyy'  })
+    $("#programme_session_end_date").datepicker({ format: 'dd/mm/yyyy'  })
+  </script>
+<% end %>

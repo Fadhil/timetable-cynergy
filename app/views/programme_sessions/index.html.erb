@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Programme Sessions</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Active</th>
+      <th>Completed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programme_sessions.each do |programme_session| %>
+      <tr>
+        <td><%= programme_session.name %></td>
+        <td><%= programme_session.start_date %></td>
+        <td><%= programme_session.end_date %></td>
+        <td><%= programme_session.active %></td>
+        <td><%= programme_session.completed %></td>
+        <td><%= link_to 'Show', programme_session %></td>
+        <td><%= link_to 'Edit', edit_programme_session_path(programme_session) %></td>
+        <td><%= link_to 'Destroy', programme_session, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Programme session', new_programme_session_path %>
