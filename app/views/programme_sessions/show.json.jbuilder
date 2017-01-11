@@ -1,0 +1,1 @@
+json.partial! "programme_sessions/programme_session", programme_session: @programme_session
