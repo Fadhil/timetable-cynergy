@@ -1,5 +1,6 @@
 class ProgrammeSessionsController < ApplicationController
-  before_action :set_programme_session, only: [:show, :edit, :update, :destroy]
+  before_action :set_programme_session,
+    only: [:show, :edit, :update, :destroy, :register]
 
   # GET /programme_sessions
   # GET /programme_sessions.json
@@ -59,6 +60,12 @@ class ProgrammeSessionsController < ApplicationController
       format.html { redirect_to programme_sessions_url, notice: 'Programme session was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # GET /programme_sessions/1/register
+  # GET /programme_sessions/1/register.json
+  def register
+
   end
 
   private
