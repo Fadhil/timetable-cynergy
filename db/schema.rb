@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20170110081117) do
     t.string   "name",       limit: 255
     t.date     "start_date"
     t.date     "end_date"
-    t.boolean  "active"
-    t.boolean  "completed"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.boolean  "active",                 default: true
+    t.boolean  "completed",              default: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   create_table "roles", force: :cascade do |t|

@@ -4,8 +4,8 @@ class CreateProgrammeSessions < ActiveRecord::Migration
       t.string :name
       t.date :start_date
       t.date :end_date
-      t.boolean :active
-      t.boolean :completed
+      t.boolean :active, default: true
+      t.boolean :completed, default: false
 
       t.timestamps null: false
     end
