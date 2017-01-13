@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110081117) do
+ActiveRecord::Schema.define(version: 20170112020144) do
 
   create_table "programme_sessions", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170110081117) do
     t.boolean  "completed",              default: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
+  end
+
+  create_table "registrations", force: :cascade do |t|
+    t.integer  "weekly_teaching_hours", limit: 4
+    t.string   "required_venue",        limit: 255
+    t.text     "required_stationery",   limit: 65535
+    t.text     "required_equipment",    limit: 65535
+    t.text     "additional_notes",      limit: 65535
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "roles", force: :cascade do |t|
