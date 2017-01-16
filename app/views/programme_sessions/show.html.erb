@@ -25,5 +25,15 @@
   <%= @programme_session.completed %>
 </p>
 
-<%= link_to 'Edit', edit_programme_session_path(@programme_session) %> |
-<%= link_to 'Back', programme_sessions_path %>
+<% if current_user.is_admin? %>
+  <h3>Registered Trainers for this Session</h3>
+  <ul>
+    <% @programme_session.users.each do |trainer| %>
+      <li><%=  trainer.email %></li>  
+    <% end %>
+  </ul>
+  <%= link_to 'Edit', edit_programme_session_path(@programme_session) %> |
+  <%= link_to 'Back', programme_sessions_path %>
+<% end %> 
+
+
