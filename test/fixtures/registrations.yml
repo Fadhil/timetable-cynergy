@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weekly_teaching_hours: 1
+  required_venue: MyString
+  required_stationery: MyText
+  required_equipment: MyText
+  additional_notes: MyText
+
+two:
+  weekly_teaching_hours: 1
+  required_venue: MyString
+  required_stationery: MyText
+  required_equipment: MyText
+  additional_notes: MyText

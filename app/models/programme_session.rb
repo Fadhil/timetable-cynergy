@@ -4,4 +4,7 @@ class ProgrammeSession < ActiveRecord::Base
   validates :end_date, presence: true
 
   scope :active, -> { where(active: true) }
+
+  has_many :registrations
+  has_many :users, through: :registrations
 end

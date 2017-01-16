@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :sessions, controller: 'programme_sessions', as: :programme_sessions do
     member do
       get '/register' => 'programme_sessions#register'
+      post '/register' => 'programme_sessions#create_registration'
     end
   end
   get 'pages/home'
