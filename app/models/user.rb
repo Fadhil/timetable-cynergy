@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :roles
+  has_many :registrations
+  has_many :programme_sessions, through: :registrations
 
   def is_admin?
     roles.include?(Role.where(name: "Admin").first)

@@ -14,3 +14,47 @@
   <strong>End date:</strong>
   <%= @programme_session.end_date %>
 </p>
+
+<% if @programme_session.users.include?(current_user) %>
+  <h3>You have already registered for this programme</h3>
+<% else %>
+  <h3>Register as Trainer</h3>
+
+  <%= form_for(@registration, url: register_programme_session_path) do |f| %>
+    <% if @registration.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+        <ul>
+        <% @registration.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :weekly_teaching_hours %><br>
+      <%= f.number_field :weekly_teaching_hours %>
+    </div>
+    <div class="field">
+      <%= f.label :required_venue %><br>
+      <%= f.text_field :required_venue %>
+    </div>
+    <div class="field">
+      <%= f.label :required_stationery %><br>
+      <%= f.text_area :required_stationery %>
+    </div>
+    <div class="field">
+      <%= f.label :required_equipment %><br>
+      <%= f.text_area :required_equipment %>
+    </div>
+    <div class="field">
+      <%= f.label :additional_notes %><br>
+      <%= f.text_area :additional_notes %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>
