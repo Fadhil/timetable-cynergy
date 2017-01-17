@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113113932) do
+ActiveRecord::Schema.define(version: 20170116032047) do
+
+  create_table "programme_modules", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "code",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "programme_modules_sessions", id: false, force: :cascade do |t|
+    t.integer "programme_session_id", limit: 4, null: false
+    t.integer "programme_module_id",  limit: 4, null: false
+  end
+
+  add_index "programme_modules_sessions", ["programme_module_id", "programme_session_id"], name: "module_session_id", using: :btree
+  add_index "programme_modules_sessions", ["programme_session_id", "programme_module_id"], name: "session_module_id", using: :btree
 
   create_table "programme_sessions", force: :cascade do |t|
     t.string   "name",       limit: 255
