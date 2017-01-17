@@ -75,7 +75,7 @@ class ProgrammeSessionsController < ApplicationController
     @registration.programme_session = @programme_session
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to @programme_session, notice: 'Successfully registered for programme' }
+        format.html { redirect_to pages_home_path, notice: 'Successfully registered for programme' }
         format.json { render :show, status: :created, location: @programme_session }
       else
         format.html { render :new }
@@ -96,6 +96,9 @@ class ProgrammeSessionsController < ApplicationController
     end
 
     def registration_params
-      params.require(:registration).permit(:weekly_teaching_hours, :required_venue, :required_stationery, :required_equipment, :additional_notes, :programme_module_ids => [])
+      params.require(:registration).permit(:weekly_teaching_hours, :required_venue, :required_stationery, :required_equipment, :additional_notes, :venue_id, :other_venue, :programme_module_ids => [])
     end
+
+
+
 end
