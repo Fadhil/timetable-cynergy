@@ -26,7 +26,7 @@ class ProgrammeSessionsController < ApplicationController
   # POST /programme_sessions.json
   def create
     @programme_session = ProgrammeSession.new(programme_session_params)
-
+    @programme_session.modules << ProgrammeModule.all
     respond_to do |format|
       if @programme_session.save
         format.html { redirect_to @programme_session, notice: 'Programme session was successfully created.' }
