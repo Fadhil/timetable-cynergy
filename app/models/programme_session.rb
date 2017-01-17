@@ -7,4 +7,5 @@ class ProgrammeSession < ActiveRecord::Base
 
   has_many :registrations
   has_many :users, through: :registrations
+  has_and_belongs_to_many :modules, class_name: 'ProgrammeModule'
 end
