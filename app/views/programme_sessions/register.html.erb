@@ -33,6 +33,20 @@
       </div>
     <% end %>
 
+    <% if @programme_modules_by_category %>
+      <h4>Select Modules</h4>
+      <% @programme_modules_by_category.each do |category, modules| %>
+        <h5><%= category %></h5>
+        <% modules.each do |m| %>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="registration[programme_module_ids][]" value=<%= m.id %>><%= m.listing_name %>
+            </label>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+
     <div class="field">
       <%= f.label :weekly_teaching_hours %><br>
       <%= f.number_field :weekly_teaching_hours %>

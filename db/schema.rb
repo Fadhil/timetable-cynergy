@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117065759) do
+ActiveRecord::Schema.define(version: 20170117073709) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(version: 20170117065759) do
   end
 
   add_index "programme_modules", ["category_id"], name: "index_programme_modules_on_category_id", using: :btree
+
+  create_table "programme_modules_registrations", id: false, force: :cascade do |t|
+    t.integer "registration_id",     limit: 4, null: false
+    t.integer "programme_module_id", limit: 4, null: false
+  end
 
   create_table "programme_modules_sessions", id: false, force: :cascade do |t|
     t.integer "programme_session_id", limit: 4, null: false
