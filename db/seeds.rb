@@ -48,3 +48,9 @@ modules_list.each do |category_code, module_code, module_name|
     programme_module.save
   end
 end
+
+puts "Adding modules to all ProgrammeSessions"
+ProgrammeSession.all.each do |programme_session|
+  programme_session.modules << ProgrammeModule.all
+  programme_session.save
+end
