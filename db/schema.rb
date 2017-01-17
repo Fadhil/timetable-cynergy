@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113113932) do
+ActiveRecord::Schema.define(version: 20170117065759) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "code",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "programme_modules", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "code",        limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "category_id", limit: 4
+  end
+
+  add_index "programme_modules", ["category_id"], name: "index_programme_modules_on_category_id", using: :btree
+
+  create_table "programme_modules_sessions", id: false, force: :cascade do |t|
+    t.integer "programme_session_id", limit: 4, null: false
+    t.integer "programme_module_id",  limit: 4, null: false
+  end
+
+  add_index "programme_modules_sessions", ["programme_module_id", "programme_session_id"], name: "module_session_id", using: :btree
+  add_index "programme_modules_sessions", ["programme_session_id", "programme_module_id"], name: "session_module_id", using: :btree
 
   create_table "programme_sessions", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -70,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170113113932) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "programme_modules", "categories"
   add_foreign_key "registrations", "programme_sessions"
   add_foreign_key "registrations", "users"
   add_foreign_key "roles", "users"
