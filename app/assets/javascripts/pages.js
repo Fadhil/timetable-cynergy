@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  var table = document.getElementsByTagName("table")[0];
+$(".programme_sessions.register").ready(function() {
+  var table = document.getElementById("timetable-table");
   var cells = table.getElementsByTagName("td"); // 
 
   for(var i = 0; i < cells.length; i++){
@@ -8,7 +8,6 @@ $(document).ready(function() {
       // Track with onclick
       cell.onclick = function(){
           toggleSelect(this);
-          //alert("cell: " + cellIndex + " / row: " + rowIndex );
       }
   }
 });
