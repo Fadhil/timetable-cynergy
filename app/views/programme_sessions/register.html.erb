@@ -1,20 +1,14 @@
 <p id="notice"><%= notice %></p>
+<div class="jumbotron text-center">
+  <h2>
+    <%= @programme_session.name %>
+  </h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @programme_session.name %>
-</p>
+  <p>
+  <%= @programme_session.start_date.strftime("%d-%m-%Y") %> - <%= @programme_session.end_date.strftime("%d-%m-%Y") %>
+  </p>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @programme_session.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @programme_session.end_date %>
-</p>
-
+</div>
 <% if @programme_session.users.include?(current_user) %>
   <h3>You have already registered for this programme</h3>
 <% else %>

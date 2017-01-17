@@ -14,10 +14,12 @@ class User < ActiveRecord::Base
   def add_role(role_name)
     role = Role.where(name: role_name).first
     roles.push(role) unless role.nil?
+    save
   end
 
   def remove_role(role_name)
     role = Role.where(name: role_name).first
     roles.delete(role) unless role.nil?
+    save
   end
 end
