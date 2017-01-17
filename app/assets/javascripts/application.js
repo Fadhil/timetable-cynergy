@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require jquery-ready-selector
 //= require_tree .
