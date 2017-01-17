@@ -49,8 +49,17 @@ modules_list.each do |category_code, module_code, module_name|
   end
 end
 
+puts "Adding Venues"
+venues_list = ["Lab", "Classroom", "Hall"]
+venues_list.each do |venue|
+  Venue.where(name: venue).first_or_create
+end
+
+
 puts "Adding modules to all ProgrammeSessions"
 ProgrammeSession.all.each do |programme_session|
-  programme_session.modules << ProgrammeModule.all
-  programme_session.save
+  if programme_session.modules.empty?
+    programme_session.modules << ProgrammeModule.all
+    programme_session.save
+  end
 end
