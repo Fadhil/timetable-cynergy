@@ -55,6 +55,70 @@
           <% end %>
         <% end %>
 
+        <br/>
+        <h4>Timetable Picker</h4>
+        <table class="table table-bordered" style="border:none;">
+          <tbody>
+            <tr>
+              <td></td>
+              <td>9.30-10.30am (1.5h)</td>
+              <td>11.00-1.00pm (2h)</td>
+              <td>2.00-2.30pm (1.5h)</td>
+              <td>4.00-5.00pm (1.0h)</td>
+              <td>5.30-6.30pm (1.0h)</td>
+            </tr>
+            <tr>
+              <td>Mon</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Tue</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Wed</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Thu</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Fri</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Sat</td>
+              <td colspan=4></td>
+            </tr>
+            <tr>
+              <td>Sun</td>
+              <td colspan=4></td>
+              <td style="border: none;">4.30pm (7.0h)</td>
+            </tr>
+          </tbody>
+        </table>
+        <h4>Module Requirements</h4>
         <div class="form-group">
           <%= f.label "Type of Venue Required" %><br>
           <%= f.collection_radio_buttons :venue_id, Venue.all, :id, :name do |r| %>
@@ -66,14 +130,17 @@
         <div class="field">
           <%= f.label :required_stationery %><br>
           <%= f.text_area :required_stationery, class: "form-control" %>
+          <span class="help-block">Please list. eg. 1) Pen -10pcs 2) A4 Paper -1ream</span>  
         </div>
         <div class="field">
           <%= f.label :required_equipment %><br>
           <%= f.text_area :required_equipment, class: "form-control"  %>
+          <span class="help-block">eg : 1) Mic - 2 units, 2) Flip chart - 1 unit, 3) Laptop - 1 unit, 4) Whiteboard - 1 unit</span>  
         </div>
         <div class="field">
           <%= f.label :additional_notes %><br>
           <%= f.text_area :additional_notes, class: "form-control"  %>
+          <span class="help-block">Please list. eg. 1) Pen -10pcs 2) A4 Paper -1ream</span>  
         </div>
         <br>
         <div class="actions">
