@@ -26,7 +26,7 @@ class ProgrammeSessionsController < ApplicationController
   # POST /programme_sessions.json
   def create
     @programme_session = ProgrammeSession.new(programme_session_params)
-
+    @programme_session.modules << ProgrammeModule.all
     respond_to do |format|
       if @programme_session.save
         format.html { redirect_to @programme_session, notice: 'Programme session was successfully created.' }
@@ -66,6 +66,7 @@ class ProgrammeSessionsController < ApplicationController
   # GET /programme_sessions/1/register.json
   def register
     @registration = Registration.new
+    @programme_modules_by_category = ProgrammeModule.all.group_by{ |m| m.category.name }
   end
 
   def create_registration
@@ -95,6 +96,6 @@ class ProgrammeSessionsController < ApplicationController
     end
 
     def registration_params
-      params.require(:registration).permit(:weekly_teaching_hours, :required_venue, :required_stationery, :required_equipment, :additional_notes)
+      params.require(:registration).permit(:weekly_teaching_hours, :required_venue, :required_stationery, :required_equipment, :additional_notes, :programme_module_ids => [])
     end
 end
