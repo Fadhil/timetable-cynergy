@@ -40,7 +40,7 @@
         <% modules.each do |m| %>
           <div class="checkbox">
             <label>
-              <input type="checkbox" name="registration[programme_module_ids][]" value=<%= m.id %>><%= m.name %>
+              <input type="checkbox" name="registration[programme_module_ids][]" value=<%= m.id %>><%= m.listing_name %>
             </label>
           </div>
         <% end %>
