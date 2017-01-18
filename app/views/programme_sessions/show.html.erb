@@ -28,12 +28,23 @@
 <% if current_user.is_admin? %>
   <h3>Registered Trainers for this Session</h3>
   <ul>
-    <% @programme_session.users.each do |trainer| %>
-      <li><%=  trainer.email %></li>  
+    <% @programme_session.registrations.each do |registration| %>
+      <li><%=  link_to registration.user.email, show_registration_programme_session_path(registration_id: registration.id) %></li>  
     <% end %>
   </ul>
+
+  <h3>Summary</h3>
+  <table class="table">
+    <tbody>
+      <tr><th>Module</th><th># of Trainers</th><th>Trainers</th></tr>
+      <% @lecturers_by_modules.each do |module_name, trainer_count, trainers| %>  
+        <tr><th><%= module_name %></th><td><%= trainer_count %></td><td><%= trainers.join(",") %></td></tr>      
+      <% end %>
+    </tbody>
+  </table>
   <%= link_to 'Edit', edit_programme_session_path(@programme_session) %> |
   <%= link_to 'Back', programme_sessions_path %>
+
 <% end %> 
 
 
