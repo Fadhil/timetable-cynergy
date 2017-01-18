@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     member do
       get '/register' => 'programme_sessions#register'
       post '/register' => 'programme_sessions#create_registration'
+      get '/register/:registration_id' => 'programme_sessions#show_registration', as: :show_registration
     end
   end
   get 'pages/home'

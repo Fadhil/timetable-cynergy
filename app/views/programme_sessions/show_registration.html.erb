@@ -1,0 +1,121 @@
+<div class="row">
+  <div class="col-md-12">
+    <p id="notice"><%= notice %></p>
+    <div class="jumbotron text-center">
+      <h2>
+        <%= @programme_session.name %>
+      </h2>
+
+      <p>
+      <%= @programme_session.start_date.strftime("%d-%m-%Y") %> - <%= @programme_session.end_date.strftime("%d-%m-%Y") %>
+      </p>
+
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-12">
+    <div class="form-group">
+      <label class=" control-label" for="textinput">Weekly Teaching Hours</label>  
+      <div class="">
+        <%= @registration.weekly_teaching_hours%>
+        <span class="help-block">The number of hours you teach in a week</span>  
+      </div>
+    </div>
+
+    <h4>Selected Modules</h4>
+    <% @programme_modules_by_category.each do |category, modules| %>
+      <h5><%= category %></h5>
+      <% modules.each do |m| %>
+        <p><%= m.listing_name %></p>
+      <% end %>
+    <% end %>
+
+    <br/>
+    <h4>Timetable Picker</h4>
+    <table id="timetable-table" class="table table-bordered" style="border:none;">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>9.30-10.30am (1.5h)</td>
+          <td>11.00-1.00pm (2h)</td>
+          <td>2.00-2.30pm (1.5h)</td>
+          <td>4.00-5.00pm (1.0h)</td>
+          <td>5.30-6.30pm (1.0h)</td>
+        </tr>
+        <tr>
+          <td>Mon</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tue</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wed</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Thu</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Fri</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Sat</td>
+          <td colspan=4></td>
+        </tr>
+        <tr>
+          <td>Sun</td>
+          <td colspan=4></td>
+          <td style="border: none;">4.30pm (7.0h)</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4>Module Requirements</h4>
+    <div class="form-group">
+      <%= label nil, "Type of Venue Required" %><br>
+      <%= @registration.venue_name %>
+    </div>
+    <div class="field">
+      <%= label nil, :required_stationery %><br>
+      <%= @registration.required_stationery %>
+    </div>
+    <div class="field">
+      <%= label nil, :required_equipment %><br>
+      <%= @registration.required_equipment %>
+    </div>
+    <div class="field">
+      <%= label nil, :additional_notes %><br>
+      <%= @registration.additional_notes %>
+    </div>
+    <br>
+  </div>
+</div>
+<script>
+	$(document).ready(function() {
+    setTimetableListeners();
+	});
+</script>
