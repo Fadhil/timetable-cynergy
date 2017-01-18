@@ -1,6 +1,9 @@
 class ProgrammeSessionsController < ApplicationController
   before_action :set_programme_session,
-    only: [:show, :edit, :update, :destroy, :register, :create_registration]
+    only: [
+      :show, :edit, :update, :destroy, :register, :create_registration,
+      :show_registration
+    ]
 
   # GET /programme_sessions
   # GET /programme_sessions.json
@@ -11,6 +14,7 @@ class ProgrammeSessionsController < ApplicationController
   # GET /programme_sessions/1
   # GET /programme_sessions/1.json
   def show
+    @lecturers_by_modules = @programme_session.modules.map{|m| [m.name, m.registrations.count, @programme_session.modules.find(m.id).registrations.map{|r| r.user.email}]}
   end
 
   # GET /programme_sessions/new
@@ -82,6 +86,11 @@ class ProgrammeSessionsController < ApplicationController
         format.json { render json: @registration.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show_registration
+    @registration = Registration.find(params[:registration_id])
+    @programme_modules_by_category = @registration.programme_modules.group_by{ |m| m.category.name }
   end
 
   private
