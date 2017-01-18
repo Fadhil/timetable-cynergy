@@ -37,8 +37,10 @@
   <table class="table">
     <tbody>
       <tr><th>Module</th><th># of Trainers</th><th>Trainers</th></tr>
-      <% @lecturers_by_modules.each do |module_name, trainer_count, trainers| %>  
-        <tr><th><%= module_name %></th><td><%= trainer_count %></td><td><%= trainers.join(",") %></td></tr>      
+      <% if @lecturers_by_modules %>
+        <% @lecturers_by_modules.each do |module_code, details| %>  
+          <tr><th><%= module_code%>-<%= details[:name] %></th><td><%= details[:trainer_count] %></td><td><%= details[:trainers].join(",") %></td></tr>      
+        <% end %>
       <% end %>
     </tbody>
   </table>

@@ -14,7 +14,7 @@ class ProgrammeSessionsController < ApplicationController
   # GET /programme_sessions/1
   # GET /programme_sessions/1.json
   def show
-    @lecturers_by_modules = @programme_session.modules.map{|m| [m.name, m.registrations.count, @programme_session.modules.find(m.id).registrations.map{|r| r.user.email}]}
+    @lecturers_by_modules = @programme_session.trainers_by_modules
   end
 
   # GET /programme_sessions/new
