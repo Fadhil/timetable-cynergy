@@ -1,16 +1,19 @@
-$(".programme_sessions.register").ready(function() {
+function setTimetableListeners() {
+  console.log("Setting up Timetable listeners");
   var table = document.getElementById("timetable-table");
-  var cells = table.getElementsByTagName("td"); // 
+	if(table !== null) {
+		var cells = table.getElementsByTagName("td"); // 
 
-  for(var i = 0; i < cells.length; i++){
-      // Cell Object
-      var cell = cells[i];
-      // Track with onclick
-      cell.onclick = function(){
-          toggleSelect(this);
-      }
-  }
-});
+		for(var i = 0; i < cells.length; i++){
+				// Cell Object
+				var cell = cells[i];
+				// Track with onclick
+				cell.onclick = function(){
+						toggleSelect(this);
+				}
+		}
+	}
+}
 
 function toggleSelect(cell) {
   var cellIndex  = cell.cellIndex;  

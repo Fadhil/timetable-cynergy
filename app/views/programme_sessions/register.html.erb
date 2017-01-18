@@ -57,7 +57,8 @@
 
         <br/>
         <h4>Timetable Picker</h4>
-        <table class="table table-bordered" style="border:none;">
+        <%= f.hidden_field :timetable, name: "registration[timetable][]", value: [[1,2],[3,4]] %>
+        <table id="timetable-table" class="table table-bordered" style="border:none;">
           <tbody>
             <tr>
               <td></td>
@@ -150,3 +151,8 @@
     <% end %>
   </div>
 </div>
+<script>
+	$(document).ready(function() {
+    setTimetableListeners();
+	});
+</script>
