@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Salutation:</strong>
+  <%= @profile.salutation %>
+</p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @profile.full_name %>
+</p>
+
+<p>
+  <strong>Staff:</strong>
+  <%= @profile.staff_id %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @profile.designation %>
+</p>
+
+<p>
+  <strong>Faculty:</strong>
+  <%= @profile.faculty %>
+</p>
+
+<p>
+  <strong>Office telephone number:</strong>
+  <%= @profile.office_telephone_number %>
+</p>
+
+<p>
+  <strong>Mobile telephone number:</strong>
+  <%= @profile.mobile_telephone_number %>
+</p>
+
+<p>
+  <strong>Employment type:</strong>
+  <%= @profile.employment_type %>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @profile.qualification %>
+</p>
+
+<p>
+  <strong>Field of knowledge:</strong>
+  <%= @profile.field_of_knowledge %>
+</p>
+
+<p>
+  <strong>Technical skills:</strong>
+  <%= @profile.technical_skills %>
+</p>
+
+<p>
+  <strong>Personal skills:</strong>
+  <%= @profile.personal_skills %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', :back %>
