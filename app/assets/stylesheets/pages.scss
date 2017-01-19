@@ -2,8 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $some-green: #82E0AA;
+$white: #fff;
+$black: #000;
+
 
 .highlighted {
   background-color: $some-green;
 } 
+
+button[data-id=profile_salutation] {
+  background-color: $white !important;
+  color: $black !important;
+}
 

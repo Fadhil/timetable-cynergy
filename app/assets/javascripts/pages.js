@@ -15,6 +15,13 @@ function setTimetableListeners() {
 	}
 }
 
+function setSelectpicker() {
+	$('.selectpicker').selectpicker({
+		style: 'btn-info',
+		size: 4
+	});
+}
+
 function toggleSelect(cell) {
   var cellIndex  = cell.cellIndex;  
 
