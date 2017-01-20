@@ -12,60 +12,115 @@
           <div class="tab-pane fade active in" role="tabpanel" id="profile" aria-labelledby="profile-tab"> 
 						<div class="row">
               <div class="col-md-8 col-sm-12">
-                <div class="field">
-                  <%= label nil, :salutation %><br>
-                  <%= @profile.salutation %>
-                </div>
-                <div class="field">
-                  <%= label nil, :full_name %><br>
-                  <%= @profile.full_name %>
-                </div>
-                <div class="field">
-                  <%= label nil, "Staff ID" %><br>
-                  <%= @profile.staff_id %>
-                </div>
-                <div class="field">
-                  <%= label nil, :designation %><br>
-                  <%= @profile.designation %>
-                </div>
-                <div class="field">
-                  <%= label nil, :faculty %><br>
-                  <%= @profile.faculty %>
-                </div>
-                <div class="field">
-                  <%= label nil, :office_telephone_number %><br>
-                  <%= @profile.office_telephone_number %>
-                </div>
-                <div class="field">
-                  <%= label nil, :mobile_telephone_number %><br>
-                  <%= @profile.mobile_telephone_number %>
-                </div>
-                <div class="field">
-                  <%= label nil, :employment_type %><br>
-                  <%= @profile.employment_type %>
-                </div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        <%= label nil, :salutation %><br>
+                      </th>
+                      <td>
+                        <%= @profile.salutation %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :full_name %><br>
+                      </th>
+                      <td>
+                        <%= @profile.full_name %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, "Staff ID" %><br>
+                      </th>
+                      <td>
+                        <%= @profile.staff_id %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :designation %><br>
+                      </th>
+                      <td>
+                        <%= @profile.designation %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :faculty %><br>
+                      </th>
+                      <td>
+                        <%= @profile.faculty.name %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :office_telephone_number %><br>
+                      </th>
+                      <td>
+                        <%= @profile.office_telephone_number %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :mobile_telephone_number %><br>
+                      </th>
+                      <td>
+                        <%= @profile.mobile_telephone_number %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :employment_type %><br>
+                      </th>
+                      <td>
+                        <%= @profile.employment_type %>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 						</div>
           </div> 
           <div class="tab-pane fade" role="tabpanel" id="background" aria-labelledby="background-tab">
 						<div class="row">
               <div class="col-md-8 col-sm-12">
-                <div class="field">
-                  <%= label nil, :qualification %><br>
-                  <%= @profile.qualification %>
-                </div>
-                <div class="field">
-                  <%= label nil, :field_of_knowledge %><br>
-                  <%= @profile.field_of_knowledge %>
-                </div>
-                <div class="field">
-                  <%= label nil, :technical_skills %><br>
-                  <%= @profile.technical_skills %>
-                </div>
-                <div class="field">
-                  <%= label nil, :personal_skills %><br>
-                  <%= @profile.personal_skills %>
-                </div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        <%= label nil, :qualification %><br>
+                      </th>
+                      <td>
+                        <%= @profile.qualification.gsub(/\n/, '<br/>').html_safe %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :field_of_knowledge %><br>
+                      </th>
+                      <td>
+                        <%= @profile.field_of_knowledge.gsub(/\n/, '<br/>').html_safe %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :technical_skills %><br>
+                      </th>
+                      <td>
+                        <%= @profile.technical_skills.gsub(/\n/, '<br/>').html_safe %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :personal_skills %><br>
+                      </th>
+                      <td>
+                        <%= @profile.personal_skills.gsub(/\n/, '<br/>').html_safe %>
+                      </td>
+                    </tr>
+                </table>
               </div>
             </div>
           </div> 

@@ -17,8 +17,6 @@ function setTimetableListeners() {
 
 function setSelectpicker() {
 	$('.selectpicker').selectpicker({
-		style: 'btn-info',
-		size: 4
 	});
 }
 
