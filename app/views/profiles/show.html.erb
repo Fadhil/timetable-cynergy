@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-sm-12">
+			<ul class="nav nav-tabs" id="myTabs" role="tablist"> 
+				<li role="presentation" class="active">
+					<a href="#profile" id="profile-tab" role="tab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Profile</a>
+				</li> 
+				<li role="presentation" class=""><a href="#background" role="tab" id="background-tab" data-toggle="tab" aria-controls="background" aria-expanded="false">Background</a>
+				</li> 
+			</ul> 
+        <div class="tab-content" id="tabContent"> 
+          <div class="tab-pane fade active in" role="tabpanel" id="profile" aria-labelledby="profile-tab"> 
+						<div class="row">
+              <div class="col-md-8 col-sm-12">
+                <div class="field">
+                  <%= label nil, :salutation %><br>
+                  <%= @profile.salutation %>
+                </div>
+                <div class="field">
+                  <%= label nil, :full_name %><br>
+                  <%= @profile.full_name %>
+                </div>
+                <div class="field">
+                  <%= label nil, "Staff ID" %><br>
+                  <%= @profile.staff_id %>
+                </div>
+                <div class="field">
+                  <%= label nil, :designation %><br>
+                  <%= @profile.designation %>
+                </div>
+                <div class="field">
+                  <%= label nil, :faculty %><br>
+                  <%= @profile.faculty %>
+                </div>
+                <div class="field">
+                  <%= label nil, :office_telephone_number %><br>
+                  <%= @profile.office_telephone_number %>
+                </div>
+                <div class="field">
+                  <%= label nil, :mobile_telephone_number %><br>
+                  <%= @profile.mobile_telephone_number %>
+                </div>
+                <div class="field">
+                  <%= label nil, :employment_type %><br>
+                  <%= @profile.employment_type %>
+                </div>
+              </div>
+						</div>
+          </div> 
+          <div class="tab-pane fade" role="tabpanel" id="background" aria-labelledby="background-tab">
+						<div class="row">
+              <div class="col-md-8 col-sm-12">
+                <div class="field">
+                  <%= label nil, :qualification %><br>
+                  <%= @profile.qualification %>
+                </div>
+                <div class="field">
+                  <%= label nil, :field_of_knowledge %><br>
+                  <%= @profile.field_of_knowledge %>
+                </div>
+                <div class="field">
+                  <%= label nil, :technical_skills %><br>
+                  <%= @profile.technical_skills %>
+                </div>
+                <div class="field">
+                  <%= label nil, :personal_skills %><br>
+                  <%= @profile.personal_skills %>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div> 
+        <br/>
+        <div class="actions">
+          <%= link_to 'Edit', edit_profile_path(@profile), class: 'btn btn-lg btn-primary' %>
+        </div>
+    </div>
+  </div>
+</div>
+      <script>
+        $(document).ready(function() {
+          setSelectpicker();
+        });
+      </script>
