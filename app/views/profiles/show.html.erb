@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2 col-sm-12">
+    <div class="col-md-8 col-md-offset-2 col-md-12">
 			<ul class="nav nav-tabs" id="myTabs" role="tablist"> 
 				<li role="presentation" class="active">
 					<a href="#profile" id="profile-tab" role="tab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Profile</a>
@@ -11,70 +11,70 @@
         <div class="tab-content" id="tabContent"> 
           <div class="tab-pane fade active in" role="tabpanel" id="profile" aria-labelledby="profile-tab"> 
 						<div class="row">
-              <div class="col-md-8 col-sm-12">
+              <div class="col-md-8 col-md-12">
                 <table class="table">
                   <tbody>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :salutation %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.salutation %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :full_name %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.full_name %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, "Staff ID" %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.staff_id %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :designation %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.designation %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :faculty %><br>
                       </th>
-                      <td>
-                        <%= @profile.faculty.name %>
+                      <td class="col-md-12">
+                        <%= @profile.faculty.try(:name) %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :office_telephone_number %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.office_telephone_number %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :mobile_telephone_number %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.mobile_telephone_number %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :employment_type %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.employment_type %>
                       </td>
                     </tr>
@@ -85,38 +85,38 @@
           </div> 
           <div class="tab-pane fade" role="tabpanel" id="background" aria-labelledby="background-tab">
 						<div class="row">
-              <div class="col-md-8 col-sm-12">
+              <div class="col-md-8 col-md-12">
                 <table class="table">
                   <tbody>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :qualification %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.qualification.gsub(/\n/, '<br/>').html_safe %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :field_of_knowledge %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.field_of_knowledge.gsub(/\n/, '<br/>').html_safe %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :technical_skills %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.technical_skills.gsub(/\n/, '<br/>').html_safe %>
                       </td>
                     </tr>
                     <tr>
-                      <th>
+                      <th class="col-md-12">
                         <%= label nil, :personal_skills %><br>
                       </th>
-                      <td>
+                      <td class="col-md-12">
                         <%= @profile.personal_skills.gsub(/\n/, '<br/>').html_safe %>
                       </td>
                     </tr>
