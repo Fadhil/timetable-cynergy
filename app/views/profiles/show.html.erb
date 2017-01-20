@@ -93,7 +93,7 @@
                         <%= label nil, :qualification %><br>
                       </th>
                       <td class="col-md-12">
-                        <%= @profile.qualification.gsub(/\n/, '<br/>').html_safe %>
+                        <%= @profile.qualification.gsub(/\n/, '<br/>').html_safe unless @profile.qualification.nil? %>
                       </td>
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@
                         <%= label nil, :field_of_knowledge %><br>
                       </th>
                       <td class="col-md-12">
-                        <%= @profile.field_of_knowledge.gsub(/\n/, '<br/>').html_safe %>
+                        <%= @profile.field_of_knowledge.gsub(/\n/, '<br/>').html_safe unless @profile.field_of_knowledge.nil? %>
                       </td>
                     </tr>
                     <tr>
@@ -109,7 +109,7 @@
                         <%= label nil, :technical_skills %><br>
                       </th>
                       <td class="col-md-12">
-                        <%= @profile.technical_skills.gsub(/\n/, '<br/>').html_safe %>
+                        <%= @profile.technical_skills.gsub(/\n/, '<br/>').html_safe unless @profile.technical_skills.nil?%>
                       </td>
                     </tr>
                     <tr>
@@ -117,7 +117,7 @@
                         <%= label nil, :personal_skills %><br>
                       </th>
                       <td class="col-md-12">
-                        <%= @profile.personal_skills.gsub(/\n/, '<br/>').html_safe %>
+                        <%= @profile.personal_skills.gsub(/\n/, '<br/>').html_safe unless @profile.personal_skills.nil? %>
                       </td>
                     </tr>
                 </table>
