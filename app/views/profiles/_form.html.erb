@@ -42,7 +42,7 @@
                 </div>
                 <div class="field">
                   <%= f.label :faculty %><br>
-                  <%= f.text_field :faculty , class: "form-control"%>
+                  <%= f.select :faculty_id, Faculty.all.map{|fac| [fac.name, fac.id]}, {prompt: "Faculty"}, class: "selectpicker", id: "profile_faculty" %>
                 </div>
                 <div class="field">
                   <%= f.label :office_telephone_number %><br>
