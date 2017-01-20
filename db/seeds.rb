@@ -63,3 +63,17 @@ ProgrammeSession.all.each do |programme_session|
     programme_session.save
   end
 end
+
+puts "Adding Faculties \n"
+faculties_list = [
+  ["Centre For Diploma Programme","CDP"],["Faculty of Business", "FOB"],
+  ["Faculty of Computing and Informatics", "FCI"],["Faculty of Creative Multimedia","FCM"],
+  ["Faculty of Engineering","FOE"],["Faculty of Engineering and Technology","FET"],
+  ["Faculty of Information Science and Technology","FIST"],["Faculty of Law","FOL"],
+  ["Faculty of Management","FOM"],["Graduate School of Management","GSM"],
+  ["Faculty of Applied Communication","FAC"],["Faculty of Cinematic Arts","FCA"]
+]
+
+faculties_list.each do |name, code|
+  Faculty.where(name: name, code: code).first_or_create
+end

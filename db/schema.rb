@@ -11,9 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120171159) do
+ActiveRecord::Schema.define(version: 20170120175100) do
 
   create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "code",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "faculties", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "code",       limit: 255
     t.datetime "created_at",             null: false
@@ -25,7 +32,6 @@ ActiveRecord::Schema.define(version: 20170120171159) do
     t.string   "full_name",               limit: 255
     t.string   "staff_id",                limit: 255
     t.string   "designation",             limit: 255
-    t.string   "faculty",                 limit: 255
     t.string   "office_telephone_number", limit: 255
     t.string   "mobile_telephone_number", limit: 255
     t.string   "employment_type",         limit: 255
@@ -36,8 +42,10 @@ ActiveRecord::Schema.define(version: 20170120171159) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "user_id",                 limit: 4
+    t.integer  "faculty_id",              limit: 4
   end
 
+  add_index "profiles", ["faculty_id"], name: "index_profiles_on_faculty_id", using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "programme_modules", force: :cascade do |t|
@@ -130,6 +138,7 @@ ActiveRecord::Schema.define(version: 20170120171159) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "profiles", "faculties"
   add_foreign_key "profiles", "users"
   add_foreign_key "programme_modules", "categories"
   add_foreign_key "registrations", "programme_sessions"
