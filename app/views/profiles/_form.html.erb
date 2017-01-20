@@ -24,60 +24,115 @@
           <div class="tab-pane fade active in" role="tabpanel" id="profile" aria-labelledby="profile-tab"> 
 						<div class="row">
               <div class="col-md-8 col-sm-12">
-                <div class="field">
-                  <%= f.label :salutation %><br>
-                  <%= f.select :salutation, Profile.salutations, {prompt: "Salutation"}, class: "selectpicker", id: "profile_salutation" %>
-                </div>
-                <div class="field">
-                  <%= f.label :full_name %><br>
-                  <%= f.text_field :full_name , class: "form-control"%>
-                </div>
-                <div class="field">
-                  <%= f.label "Staff ID" %><br>
-                  <%= f.text_field :staff_id , class: "form-control"%>
-                </div>
-                <div class="field">
-                  <%= f.label :designation %><br>
-                  <%= f.text_field :designation , class: "form-control"%>
-                </div>
-                <div class="field">
-                  <%= f.label :faculty %><br>
-                  <%= f.select :faculty_id, Faculty.all.map{|fac| [fac.name, fac.id]}, {prompt: "Faculty"}, class: "selectpicker", id: "profile_faculty" %>
-                </div>
-                <div class="field">
-                  <%= f.label :office_telephone_number %><br>
-                  <%= f.telephone_field :office_telephone_number , class: "form-control"%>
-                </div>
-                <div class="field">
-                  <%= f.label :mobile_telephone_number %><br>
-                  <%= f.telephone_field :mobile_telephone_number , class: "form-control"%>
-                </div>
-                <div class="field">
-                  <%= f.label :employment_type %><br>
-                  <%= f.text_field :employment_type , class: "form-control"%>
-                </div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        <%= label nil, :salutation %><br>
+                      </th>
+                      <td>
+                        <%= f.select :salutation, Profile.salutations, {prompt: "Salutation"}, class: "selectpicker", id: "profile_salutation" %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :full_name %><br>
+                      </th>
+                      <td>
+                        <%= f.text_field :full_name , class: "form-control"%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, "Staff ID" %><br>
+                      </th>
+                      <td>
+                        <%= f.text_field :staff_id , class: "form-control"%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :designation %><br>
+                      </th>
+                      <td>
+                        <%= f.text_field :designation , class: "form-control"%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :faculty %><br>
+                      </th>
+                      <td>
+                        <%= f.select :faculty_id, Faculty.all.map{|fac| [fac.name, fac.id]}, {prompt: "Faculty"}, class: "selectpicker", id: "profile_faculty" %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :office_telephone_number %><br>
+                      </th>
+                      <td>
+                        <%= f.telephone_field :office_telephone_number , class: "form-control"%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :mobile_telephone_number %><br>
+                      </th>
+                      <td>
+                        <%= f.telephone_field :mobile_telephone_number , class: "form-control"%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :employment_type %><br>
+                      </th>
+                      <td>
+                        <%= f.text_field :employment_type , class: "form-control"%>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 						</div>
           </div> 
           <div class="tab-pane fade" role="tabpanel" id="background" aria-labelledby="background-tab">
 						<div class="row">
               <div class="col-md-8 col-sm-12">
-                <div class="field">
-                  <%= f.label :qualification %><br>
-                  <%= f.text_area :qualification, class: "form-control"%>
-                </div>
-                <div class="field">
-                  <%= f.label :field_of_knowledge %><br>
-                  <%= f.text_area :field_of_knowledge , class: "form-control"%>
-                </div>
-                <div class="field">
-                  <%= f.label :technical_skills %><br>
-                  <%= f.text_area :technical_skills, class: "form-control" %>
-                </div>
-                <div class="field">
-                  <%= f.label :personal_skills %><br>
-                  <%= f.text_field :personal_skills , class: "form-control"%>
-                </div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th>
+                        <%= label nil, :qualification %><br>
+                      </th>
+                      <td>
+                        <%= f.text_area :qualification, class: "form-control"%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :field_of_knowledge %><br>
+                      </th>
+                      <td>
+                        <%= f.text_area :field_of_knowledge , class: "form-control"%>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :technical_skills %><br>
+                      </th>
+                      <td>
+                        <%= f.text_area :technical_skills, class: "form-control" %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <%= label nil, :personal_skills %><br>
+                      </th>
+                      <td>
+                        <%= f.text_field :personal_skills , class: "form-control"%>
+                      </td>
+                    </tr>
+                </table>
               </div>
             </div>
           </div> 
