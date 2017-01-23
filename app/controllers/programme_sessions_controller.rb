@@ -74,7 +74,9 @@ class ProgrammeSessionsController < ApplicationController
   end
 
   def create_registration
+    @selectedTimeSlots = params[:registration].try(:delete,:timetable)
     @registration = Registration.new(registration_params)
+    @registration.timetable = @selectedTimeSlots
     @registration.user = current_user
     @registration.programme_session = @programme_session
     respond_to do |format|

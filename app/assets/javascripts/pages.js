@@ -22,13 +22,14 @@ function setSelectpicker() {
 
 function toggleSelect(cell) {
   var cellIndex  = cell.cellIndex;  
-
   var rowIndex = cell.parentNode.rowIndex;
  
   if(rowIndex!==0 && cellIndex !== 0) {
     if($(cell).hasClass("highlighted")){
+      deselectTimetableCell(rowIndex, cellIndex);
       unHighlighCell(cell);
     } else {
+      selectTimetableCell(rowIndex, cellIndex);
       highlightCell(cell);
     }
   }
@@ -40,4 +41,14 @@ function highlightCell(cell) {
 
 function unHighlighCell(cell) {
   $(cell).removeClass("highlighted");
+}
+
+function selectTimetableCell(rowIndex, cellIndex) {
+  cellCheckbox = $("input[name='registration[timetable][" + rowIndex + "][" + cellIndex + "]']"); 
+  cellCheckbox.prop("checked", true);
+}
+
+function deselectTimetableCell(rowIndex, cellIndex) {
+  cellCheckbox = $("input[name='registration[timetable][" + rowIndex + "][" + cellIndex + "]']"); 
+  cellCheckbox.prop("checked", false);
 }
