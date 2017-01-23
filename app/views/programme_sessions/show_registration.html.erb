@@ -45,51 +45,69 @@
         </tr>
         <tr>
           <td>Mon</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <% @registration.timetable["1"].each do |k,v| %>
+            <% if v == 1.to_s %>
+              <td class="highlighted"></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          <% end %>
         </tr>
         <tr>
           <td>Tue</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <% @registration.timetable["2"].each do |k,v| %>
+            <% if v == 1.to_s %>
+              <td class="highlighted"></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          <% end %>
         </tr>
         <tr>
           <td>Wed</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <% @registration.timetable["3"].each do |k,v| %>
+            <% if v == 1.to_s %>
+              <td class="highlighted"></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          <% end %>
         </tr>
         <tr>
           <td>Thu</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <% @registration.timetable["4"].each do |k,v| %>
+            <% if v == 1.to_s %>
+              <td class="highlighted"></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          <% end %>
         </tr>
         <tr>
           <td>Fri</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <% @registration.timetable["5"].each do |k,v| %>
+            <% if v == 1.to_s %>
+              <td class="highlighted"></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          <% end %>
         </tr>
         <tr>
           <td>Sat</td>
-          <td colspan=4></td>
+          <% if @registration.timetable["6"]["1"] == 1.to_s %>
+            <td colspan=4 class="highlighted" ></td>
+          <% else %>
+            <td colspan=4></td>
+          <% end %>
         </tr>
         <tr>
           <td>Sun</td>
-          <td colspan=4></td>
+          <% if @registration.timetable["7"]["1"] == 1.to_s %>
+            <td colspan=4 class="highlighted" ></td>
+          <% else %>
+            <td colspan=4></td>
+          <% end %>
           <td style="border: none;">4.30pm (7.0h)</td>
         </tr>
       </tbody>
@@ -114,8 +132,3 @@
     <br>
   </div>
 </div>
-<script>
-	$(document).ready(function() {
-    setTimetableListeners();
-	});
-</script>

@@ -57,7 +57,13 @@
 
         <br/>
         <h4>Timetable Picker</h4>
-        <%= f.hidden_field :timetable, name: "registration[timetable][]", value: [[1,2],[3,4]] %>
+        <div style="display: none;">
+          <% (1..7).each do |i| %>
+            <% (1..5).each do |j| %>
+              <%= f.check_box :timetable, name: "registration[timetable][#{i}][#{j}]", id: "registration_timetable_#{i}_#{j}" %>
+            <% end %>
+          <% end %>
+        </div>
         <table id="timetable-table" class="table table-bordered" style="border:none;">
           <tbody>
             <tr>
