@@ -1,5 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :faculty
+  belongs_to :user
 
   def self.salutations
     ['Dato', 'Datin', 'Prof Dr',
